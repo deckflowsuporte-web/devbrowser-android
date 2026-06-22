@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Divider
 import com.devbrowser.data.model.*
 import com.devbrowser.ui.theme.DevBrowserTheme
 import com.devbrowser.viewmodel.BrowserViewModel
@@ -365,7 +365,7 @@ fun NetworkPanel(
                     fontSize = 11.sp
                 )
             }
-            HorizontalDivider()
+            Divider()
         }
         
         if (requests.isEmpty()) {
