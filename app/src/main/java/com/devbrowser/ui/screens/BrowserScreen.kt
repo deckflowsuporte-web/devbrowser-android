@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.material3.HorizontalDivider
 import com.devbrowser.data.model.*
 import com.devbrowser.ui.theme.DevBrowserTheme
 import com.devbrowser.viewmodel.BrowserViewModel
@@ -225,6 +226,7 @@ fun TabChip(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DevToolsPanel(
     state: DevToolsState,
@@ -247,7 +249,7 @@ fun DevToolsPanel(
                 .padding(4.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            DevToolsPanel.entries.forEach { panel ->
+            DevToolsPanel.values().forEach { panel ->
                 FilterChip(
                     selected = state.selectedPanel == panel,
                     onClick = { onPanelSelect(panel) },
